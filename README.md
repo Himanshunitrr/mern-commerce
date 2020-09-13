@@ -1,2 +1,2 @@
 # mern-commerce
-### A e-commerce website using MERN Stack
+### An e-commerce website using MERN Stack
