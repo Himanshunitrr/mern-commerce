@@ -36,7 +36,7 @@ exports.signup = (req, res) => {
   });
 };
 
-exports.singin = (req, res) => {
+exports.signin = (req, res) => {
   User.findOne({ email: req.body.email }).exec((error, user) => {
     if (error) {
       return res.status(400).json(error);
@@ -70,9 +70,3 @@ exports.singin = (req, res) => {
   });
 };
 
-exports.requireSignin = (req, res, next) => {
-  const token = req.headers.authorization.split(" ")[1]
-  const user = jwt.verify(token, process.env.JWT_SECRET)
-  req.user = user
-  next()
-}
